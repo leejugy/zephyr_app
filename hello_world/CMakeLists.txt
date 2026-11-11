@@ -2,7 +2,15 @@
 
 cmake_minimum_required(VERSION 3.28.0)
 
+set(BOARD_DIRECTORIES ${CMAKE_CURRENT_LIST_DIR}/../../zephyr_board/stm32_h743xih6_custom)
+
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(hello_world)
 
-target_sources(app PRIVATE src/main.c)
+target_sources(app PRIVATE 
+    src/main.c
+)
+
+target_include_directories(app PRIVATE
+    
+)
